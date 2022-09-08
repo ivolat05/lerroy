@@ -8,7 +8,6 @@ const gulp = require("gulp");
 const browsersync = require("browser-sync").create();
 const autoprefixer = require("gulp-autoprefixer");
 const cssbeautify = require("gulp-cssbeautify");
-const cssnano = require("gulp-cssnano");
 const imagemin = require("gulp-imagemin");
 const jpegrecompress = require('imagemin-jpeg-recompress');//npm install --save imagemin-jpeg-recompress
 const pngquant = require('imagemin-pngquant');//npm install imagemin-pngquant
@@ -94,14 +93,8 @@ function css() {
 		}))
 		.pipe(cssbeautify())
 
-		.pipe(cssnano({
-			zindex: false,
-			discardComments: {
-				removeAll: true
-			}
-		}
 
-		))
+
 		.pipe(removeComments())
 		.pipe(rename({
 			suffix: ".min",
