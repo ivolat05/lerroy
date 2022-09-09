@@ -78,7 +78,7 @@
 				</div>
 			</div>
 		</header>
-		<section class="step --hidden">
+		<section class="step  ">
 			<div class="container">
 				<div class="step-wrapp">
 					<div class="step-head">
@@ -99,16 +99,16 @@
 							</h4>
 							<svg class="step-svg" width="133" height="16" viewBox="0 0 133 16" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
-								<circle class="circle-svg-1" cx="121" cy="8" r="6" fill="#D9D9D9" />
+								<circle class="circle-svg-3 circle-restart" cx="121" cy="8" r="6" fill="#D9D9D9" />
 								<rect class="line-svg-1" y="6" width="133" height="4" rx="2" fill="#D9D9D9" />
 								<rect class="line-svg-2" y="6" width="15" height="4" rx="2" fill="#5BB031" />
-								<circle class="circle-svg-2" cx="13" cy="8" r="8" fill="#5BB031" />
-								<circle class="circle-svg-3" cx="85" cy="8" r="6" fill="#D9D9D9" />
-								<circle class="circle-svg-4" cx="49" cy="8" r="6" fill="#D9D9D9" />
+								<circle cx="13" cy="8" r="8" fill="#5BB031" />
+								<circle class="circle-svg-2 circle-restart" cx="85" cy="8" r="6" fill="#D9D9D9" />
+								<circle class="circle-svg-1 circle-restart" cx="49" cy="8" r="6" fill="#D9D9D9" />
 							</svg>
 						</div>
 					</div>
-					<div class="step-start --hidden">
+					<div class="step-start ">
 						<label class="step-label">
 							<input type="radio" name="step" class="step-label-input">
 							<span class="step-label-span">
@@ -134,7 +134,7 @@
 							</span>
 						</label>
 					</div>
-					<div class="step-container">
+					<div class="step-container  --hidden">
 						<img src="./img/step/room.jpg" alt="" class="step-container-img">
 						<div class="step-control">
 							<button class="step-conrol-btn --one --">
@@ -153,18 +153,20 @@
 						<a href="#regulations" aria-label="правила" class="step-link open-modal">
 							?
 						</a>
-						<a href="#job" aria-label="Выбрать" class="stet-btn btn open-modal">
+						<a href="#job" aria-label="Выбрать" class="stet-btn  btn open-modal">
 							Выбрать
 						</a>
-						<!-- --no-active-->
-						<button class="step-link  " aria-label="меню">
+						<button aria-label="Выбрать" class="stet-btn-end  btn --hidden">
+							Выбрать
+						</button>
+						<button class="step-link step-link-2  --no-active" aria-label="меню">
 							<img src="./img/game/plus.svg" alt="" class="step-lin-img">
 						</button>
 					</div>
 				</div>
 			</div>
 		</section>
-		<div class="panel-box">
+		<div id="panel-box-1" class="panel-box">
 			<button class="panel-btn-close" aria-label="Закрыть">
 				<svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<rect x="36.6631" y="11.4573" width="3.24066" height="35.6473" rx="1.62033"
@@ -233,7 +235,7 @@
 							</div>
 						</div>
 						<label class="panel-label">
-							<input type="radio" name="walk" class="panle-label-input">
+							<input type="radio" name="pol" class="panle-label-input">
 							<span class="btn panel-label-span">
 								Добавить
 							</span>
@@ -254,7 +256,7 @@
 							</div>
 						</div>
 						<label class="panel-label">
-							<input type="radio" name="walk" class="panle-label-input">
+							<input type="radio" name="pol" class="panle-label-input">
 							<span class="btn panel-label-span">
 								Добавить
 							</span>
@@ -266,7 +268,183 @@
 			</div>
 		
 		</div>
-		<section class="finish">
+		
+		<div id="panel-box-2" class="panel-box">
+			<button class="panel-btn-close" aria-label="Закрыть">
+				<svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect x="36.6631" y="11.4573" width="3.24066" height="35.6473" rx="1.62033"
+						transform="rotate(45 36.6631 11.4573)" fill="#C5CBD1" />
+					<rect x="38.9551" y="36.6637" width="3.24066" height="35.6473" rx="1.62033"
+						transform="rotate(135 38.9551 36.6637)" fill="#C5CBD1" />
+				</svg>
+			</button>
+			<div class="panel-box-wrapp">
+				<h3 class="panel-title">
+					Мебель
+				</h3>
+				<div class="panel-box-container">
+					<img src="./img/panel/panel-2.png" alt="" class="panel-box-img">
+					<div class="panel-box-row">
+						<div class="panle-box-col">
+							<div class="panel-box-name">
+								Обувница Трия
+							</div>
+						</div>
+						<label class="panel-label">
+							<input type="radio" name="mebel" class="panle-label-input">
+							<span class="btn panel-label-span">
+								Добавить
+							</span>
+						</label>
+					</div>
+				</div>
+		
+		
+				<div class="panel-box-container">
+					<img src="./img/panel/panel-2.png" alt="" class="panel-box-img">
+					<div class="panel-box-row">
+						<div class="panle-box-col">
+							<div class="panel-box-name">
+								Обувница Трия
+							</div>
+						</div>
+						<label class="panel-label">
+							<input type="radio" name="mebel" class="panle-label-input">
+							<span class="btn panel-label-span">
+								Добавить
+							</span>
+						</label>
+					</div>
+				</div>
+				<div class="panel-box-container">
+					<img src="./img/panel/panel-2.png" alt="" class="panel-box-img">
+					<div class="panel-box-row">
+						<div class="panle-box-col">
+							<div class="panel-box-name">
+								Обувница Трия
+							</div>
+						</div>
+						<label class="panel-label">
+							<input type="radio" name="mebel" class="panle-label-input">
+							<span class="btn panel-label-span">
+								Добавить
+							</span>
+						</label>
+					</div>
+				</div>
+		
+		
+				<div class="panel-box-container">
+					<img src="./img/panel/panel-2.png" alt="" class="panel-box-img">
+					<div class="panel-box-row">
+						<div class="panle-box-col">
+							<div class="panel-box-name">
+								Обувница Трия
+							</div>
+						</div>
+						<label class="panel-label">
+							<input type="radio" name="mebel" class="panle-label-input">
+							<span class="btn panel-label-span">
+								Добавить
+							</span>
+						</label>
+					</div>
+				</div>
+		
+		
+			</div>
+		
+		</div>
+		
+		
+		<div id="panel-box-3" class="panel-box">
+			<button class="panel-btn-close" aria-label="Закрыть">
+				<svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect x="36.6631" y="11.4573" width="3.24066" height="35.6473" rx="1.62033"
+						transform="rotate(45 36.6631 11.4573)" fill="#C5CBD1" />
+					<rect x="38.9551" y="36.6637" width="3.24066" height="35.6473" rx="1.62033"
+						transform="rotate(135 38.9551 36.6637)" fill="#C5CBD1" />
+				</svg>
+			</button>
+			<div class="panel-box-wrapp">
+				<h3 class="panel-title">
+					Декор
+				</h3>
+				<div class="panel-box-container">
+					<img src="./img/panel/panel-3.png" alt="" class="panel-box-img">
+					<div class="panel-box-row">
+						<div class="panle-box-col">
+							<div class="panel-box-name">
+								Бра «Minsk»
+							</div>
+						</div>
+						<label class="panel-label">
+							<input type="radio" name="decor" class="panle-label-input">
+							<span class="btn panel-label-span">
+								Добавить
+							</span>
+						</label>
+					</div>
+				</div>
+		
+		
+				<div class="panel-box-container">
+					<img src="./img/panel/panel-3.png" alt="" class="panel-box-img">
+					<div class="panel-box-row">
+						<div class="panle-box-col">
+							<div class="panel-box-name">
+								Бра «Minsk»
+							</div>
+						</div>
+						<label class="panel-label">
+							<input type="radio" name="decor" class="panle-label-input">
+							<span class="btn panel-label-span">
+								Добавить
+							</span>
+						</label>
+					</div>
+				</div>
+				<div class="panel-box-container">
+					<img src="./img/panel/panel-3.png" alt="" class="panel-box-img">
+					<div class="panel-box-row">
+						<div class="panle-box-col">
+							<div class="panel-box-name">
+								Бра «Minsk»
+							</div>
+						</div>
+						<label class="panel-label">
+							<input type="radio" name="decor" class="panle-label-input">
+							<span class="btn panel-label-span">
+								Добавить
+							</span>
+						</label>
+					</div>
+				</div>
+		
+		
+				<div class="panel-box-container">
+					<img src="./img/panel/panel-3.png" alt="" class="panel-box-img">
+					<div class="panel-box-row">
+						<div class="panle-box-col">
+							<div class="panel-box-name">
+								Бра «Minsk»
+							</div>
+		
+						</div>
+						<label class="panel-label">
+							<input type="radio" name="decor" class="panle-label-input">
+							<span class="btn panel-label-span">
+								Добавить
+							</span>
+						</label>
+					</div>
+				</div>
+		
+		
+			</div>
+		
+		</div>
+		<section class="finish --hidden">
 			<div class="container">
 				<div class="finish-wrapp">
 					<h3 class="finish-title">
@@ -301,7 +479,7 @@
 								<a href="#" aria-label="В личный кабинет" class="btn finish-btn">
 									В личный кабинет
 								</a>
-								<button aria-label="Играть еще раз" class="btn finish-btn">
+								<button aria-label="Играть еще раз" class="btn restart-game  finish-btn">
 									Играть еще раз
 								</button>
 								<a href="#" aria-label="Смотреть каталог Леруа Мерлен" class="btn finish-btn">
@@ -397,12 +575,12 @@
 		<p class="popup-2-text">
 			С товарами и услугами Леруа Мерлен ты сможешь сделать эту квартиру максимально уютной быстро и просто
 		</p>
-		<button class="popup-2-btn btn popup-close" aria-label="Далее">
+		<button class="popup-2-btn btn-start btn popup-close" aria-label="Далее">
 			Далее
 		</button>
 	</div>
 	
-	<div id="job-2" class="popup-2 mfp-hide --two">
+	<div id="job-1" class="popup-2 mfp-hide --two">
 		<h3 class="popup-2-title">
 			Хорошая работа!
 		</h3>
@@ -410,12 +588,12 @@
 			В Леруа Мерлен ты найдешь большой выбор напольных покрытий для всех помещений, краску и обои для стен, а еще
 			большую коллекцию плитки.
 		</p>
-		<button class="popup-2-btn   btn popup-close" aria-label="Далее">
+		<button class="popup-2-btn btn-start  btn popup-close" aria-label="Далее">
 			Далее
 		</button>
 	</div>
 	
-	<div id="job-3" class="popup-2  --three mfp-hide ">
+	<div id="job-2" class="popup-2  --three mfp-hide ">
 		<a href="#" aria-label="В личный кабинет" class="popup-2-link">В личный кабинет</a>
 		<h3 class="popup-2-title">
 			Поздравляем
@@ -430,14 +608,15 @@
 			Если хочешь, то добавь в квартиру декор и сделай ее еще уютнее.
 		</p>
 		<div class="popup-2-row">
-			<button class="popup-3-btn  btn popup-close" aria-label="Продолжить">
+			<button class="popup-3-btn btn-start  btn popup-close" aria-label="Продолжить">
 				Продолжить
 			</button>
-			<button class="popup-3-btn  btn popup-close" aria-label="Играть заново">
+			<button class="popup-3-btn restart-game  btn popup-close" aria-label="Играть заново">
 				Играть заново
 			</button>
 		</div>
 	</div>
+	<div class="fon"></div>
 	
 	<script src="js/app.min.js"></script>
 </body>
