@@ -86,11 +86,21 @@ $(function () {
 		let stetBtnEnd = document.querySelector('.stet-btn-end');
 		let stepControl = document.querySelector('.step-control');
 		let mobControl = document.querySelectorAll('.mob-control');
+		let stepTitle = document.querySelector('.step-title');
+		let stepText = document.querySelector('.step-text');
 		if (step) {
 			btn.forEach(item => {
 				item.addEventListener('click', () => {
 					if (counter < 4) {
 						counter += 1;
+						if (counter == 1) {
+							stepTitle.textContent = 'Это твоя квартира — какая она?';
+							stepText.textContent = 'Подбери покрытие пола и стен для выбранной комнаты';
+						} else if (counter == 2) {
+							stepText.textContent = 'Расставь мебель и аксессуары';
+						} else if (counter == 3) {
+							stepText.textContent = 'Добавь уюта с помощью декора';
+						}
 						lineWidth += 39;
 						let circle = document.querySelector(`.circle-svg-${counter}`);
 						circle.style.fill = '#5BB031';
@@ -132,6 +142,9 @@ $(function () {
 
 									stetBtnEnd.classList.remove('--hidden');
 									stepBtn.classList.add('--hidden');
+									if (counter == 3) {
+										stepText.textContent = ' ';
+									}
 								}
 								if (stepControl.classList.contains('--no-active')) {
 									stepControl.classList.remove('--no-active');
@@ -188,6 +201,8 @@ $(function () {
 					stetBtn.classList.remove('--no-active');
 					lineSvg.style.width = `15px`;
 					stepLink.classList.add('--no-active');
+					stepTitle.textContent = 'Это твоя квартира — какая она?';
+					stepText.textContent = 'Выбери планировку квартиры';
 
 				})
 			])
