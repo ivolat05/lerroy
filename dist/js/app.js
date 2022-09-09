@@ -70,6 +70,7 @@ $(function () {
 	// start
 	function start() {
 		const btn = document.querySelectorAll('.btn-start');
+		let step = document.querySelector('.step');
 		let counter = 0;
 		let stepStaus = 1;
 		let stepStatusTitle = document.querySelector('.step-status-title');
@@ -83,113 +84,134 @@ $(function () {
 		let stepBtn = document.querySelector('.stet-btn');
 		const restartBtn = document.querySelectorAll('.restart-game');
 		let stetBtnEnd = document.querySelector('.stet-btn-end');
-		btn.forEach(item => {
-			item.addEventListener('click', () => {
-				if (counter < 4) {
-					counter += 1;
-					lineWidth += 39;
-					let circle = document.querySelector(`.circle-svg-${counter}`);
-					circle.style.fill = '#5BB031';
-					circle.style.r = '8';
-					if (counter == 4) {
-						lineSvg.style.width = `100%`
-					} else {
-						lineSvg.style.width = `${lineWidth}px`
-					}
-					openWindow();
-					stepStaus += 1;
-					stepStatusTitle.textContent = `Шаг ${stepStaus}`
-					stetBtn.href = `#job-${counter}`;
-					if (stepLink.classList.contains('--no-active')) {
-						stepLink.classList.remove('--no-active')
-					}
+		let stepControl = document.querySelector('.step-control');
+		let mobControl = document.querySelectorAll('.mob-control');
+		if (step) {
+			btn.forEach(item => {
+				item.addEventListener('click', () => {
+					if (counter < 4) {
+						counter += 1;
+						lineWidth += 39;
+						let circle = document.querySelector(`.circle-svg-${counter}`);
+						circle.style.fill = '#5BB031';
+						circle.style.r = '8';
+						if (counter == 4) {
+							lineSvg.style.width = `100%`
+						} else {
+							lineSvg.style.width = `${lineWidth}px`
+						}
+						openWindow();
+						stepStaus += 1;
+						stepStatusTitle.textContent = `Шаг ${stepStaus}`
+						stetBtn.href = `#job-${counter}`;
+						if (stepLink.classList.contains('--no-active')) {
+							stepLink.classList.remove('--no-active')
+						}
 
-					stepLink.addEventListener('click', () => {
-						let panelBoxId = document.getElementById(`panel-box-${counter}`)
-						panelBoxId.classList.add('active')
-						fon.classList.add('active')
-					})
-
-					fon.addEventListener('click', () => {
-						fon.classList.remove('active');
-						panelBox.forEach(item => {
-							if (item.classList.contains('active')) {
-								item.classList.remove('active');
-							}
+						stepLink.addEventListener('click', () => {
+							let panelBoxId = document.getElementById(`panel-box-${counter}`)
+							panelBoxId.classList.add('active')
+							fon.classList.add('active')
 						})
-					})
 
-					panelLabel.forEach(item => {
-						item.addEventListener('click', () => {
+						fon.addEventListener('click', () => {
 							fon.classList.remove('active');
-							if (counter < 3) {
-								stepBtn.classList.remove('--no-active');
-							} else {
-
-								stetBtnEnd.classList.remove('--hidden');
-								stepBtn.classList.add('--hidden');
-							}
-
 							panelBox.forEach(item => {
 								if (item.classList.contains('active')) {
 									item.classList.remove('active');
 								}
 							})
 						})
+
+						panelLabel.forEach(item => {
+							item.addEventListener('click', () => {
+								fon.classList.remove('active');
+								if (counter < 3) {
+									stepBtn.classList.remove('--no-active');
+								} else {
+
+									stetBtnEnd.classList.remove('--hidden');
+									stepBtn.classList.add('--hidden');
+								}
+								if (stepControl.classList.contains('--no-active')) {
+									stepControl.classList.remove('--no-active');
+								}
+								mobControl.forEach(item => {
+									if (item.classList.contains('--no-active')) {
+										item.classList.remove('--no-active');
+									}
+								})
+
+
+								panelBox.forEach(item => {
+									if (item.classList.contains('active')) {
+										item.classList.remove('active');
+									}
+								})
+							})
+						})
+					}
+
+
+				})
+			})
+			// закрытия боковое понели
+			function closePanel() {
+				const panelBtnClose = document.querySelectorAll('.panel-btn-close');
+				panelBtnClose.forEach(item => {
+					item.addEventListener('click', () => {
+						item.parentElement.classList.remove('active');
+						fon.classList.remove('active')
 					})
-				}
+				})
+			}
+			closePanel()
 
-
-			})
-		})
-		// закрытия боковое понели
-		function closePanel() {
-			const panelBtnClose = document.querySelectorAll('.panel-btn-close');
-			panelBtnClose.forEach(item => {
+			// рестарт игры
+			restartBtn.forEach(item => [
 				item.addEventListener('click', () => {
-					item.parentElement.classList.remove('active');
-					fon.classList.remove('active')
+					counter = 0;
+					stepStatusTitle.textContent = `Шаг 1`
+					restartEnd()
+					closeWindow()
+					let circleRes = document.querySelectorAll(`.circle-restart`);
+					circleRes.forEach(item => {
+						item.style.fill = '#D9D9D9';
+						item.style.r = '6';
+					})
+
+					if (stepBtn.classList.contains('--hidden')) {
+						stepBtn.classList.remove('--hidden');
+						stetBtnEnd.classList.add('--hidden');
+					}
+					stetBtn.href = `#job`;
+					stetBtn.classList.remove('--no-active');
+					lineSvg.style.width = `15px`;
+					stepLink.classList.add('--no-active');
+
 				})
-			})
+			])
+
+			// скрыть кнопку
+			function hiddenBtn() {
+				let btn = document.querySelector('.stet-btn');
+				btn.addEventListener('click', () => {
+					btn.classList.add('--no-active');
+					if (!stepControl.classList.contains('--no-active')) {
+						stepControl.classList.add('--no-active');
+					}
+					mobControl.forEach(item => {
+						if (!item.classList.contains('--no-active')) {
+							item.classList.add('--no-active');
+						}
+					})
+				})
+			}
+			hiddenBtn();
 		}
-		closePanel()
-
-		// рестарт игры
-		restartBtn.forEach(item => [
-			item.addEventListener('click', () => {
-				counter = 0;
-				stepStatusTitle.textContent = `Шаг 1`
-				restartEnd()
-				closeWindow()
-				let circleRes = document.querySelectorAll(`.circle-restart`);
-				circleRes.forEach(item => {
-					item.style.fill = '#D9D9D9';
-					item.style.r = '6';
-				})
-
-				if (stepBtn.classList.contains('--hidden')) {
-					stepBtn.classList.remove('--hidden');
-					stetBtnEnd.classList.add('--hidden');
-				}
-				stetBtn.href = `#job`;
-				stetBtn.classList.remove('--no-active');
-				lineSvg.style.width = `15px`;
-				stepLink.classList.add('--no-active');
-
-			})
-		])
-
-
-
 	}
 
-	// скрыть кнопку
-	function hiddenBtn() {
-		let btn = document.querySelector('.stet-btn');
-		btn.addEventListener('click', () => {
-			btn.classList.add('--no-active');
-		})
-	}
+
 
 	function end() {
 		let stetBtnEnd = document.querySelector('.stet-btn-end');
@@ -201,7 +223,7 @@ $(function () {
 		})
 	}
 	end()
-	hiddenBtn();
+
 	start();
 	function restartEnd() {
 		let step = document.querySelector('.step');
